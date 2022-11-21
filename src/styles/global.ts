@@ -7,7 +7,8 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body{
-        background-color: ${props => props.theme.settings.primary}
+        background-color: ${props => props.theme.settings.primary};
+        overflow: hidden;
     }
 
 `
