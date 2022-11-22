@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { DefaultTheme, ThemeProvider } from "styled-components"
 import Header from "./components/Header"
+import Menu from "./components/Menu"
 import { MyContext } from "./context/myContext"
 import GlobalStyle from "./styles/global"
 import dark from "./styles/themes/dark"
@@ -17,6 +18,7 @@ function App() {
     <MyContext.Provider value={{theme, setTheme, open, setOpen}}>
       <ThemeProvider theme={theme}>
         <Header />
+        <Menu />
         <GlobalStyle />
       </ThemeProvider>
     </MyContext.Provider>
