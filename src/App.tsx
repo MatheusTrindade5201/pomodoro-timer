@@ -10,10 +10,11 @@ import light from "./styles/themes/light"
 function App() {
 
   const [theme , setTheme] = useState<DefaultTheme>(light)
+  const [open, setOpen] = useState<boolean>(false)
 
   return (
     <div className="App">
-    <MyContext.Provider value={{theme, setTheme}}>
+    <MyContext.Provider value={{theme, setTheme, open, setOpen}}>
       <ThemeProvider theme={theme}>
         <Header />
         <GlobalStyle />

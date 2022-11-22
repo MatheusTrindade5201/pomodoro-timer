@@ -1,9 +1,10 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { MyContext } from "../../../context/myContext"
 import { BurgerWrapper } from "./style"
 
 const Burguer = () => {
 
-    const [open, setOpen] = useState<boolean>(false)
+    const {open, setOpen} = useContext(MyContext)
 
     return(
         <BurgerWrapper open={open} onClick={() => open === false ? setOpen(true) : setOpen(false)}>
