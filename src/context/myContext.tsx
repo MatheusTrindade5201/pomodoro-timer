@@ -7,7 +7,7 @@ export type GlobalContent = {
     open: boolean,
     setOpen: (c:boolean) => void,
     times: Array<number>,
-    setTimes: (c:boolean) => void,
+    setTimes: (c:Array<number>) => void,
 }
 
 export const MyContext = createContext<GlobalContent>({
