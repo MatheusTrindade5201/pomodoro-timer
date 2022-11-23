@@ -12,10 +12,11 @@ function App() {
 
   const [theme , setTheme] = useState<DefaultTheme>(light)
   const [open, setOpen] = useState<boolean>(false)
+  const [times, setTimes] = useState<Array<number>>([25,5,10])
 
   return (
     <div className="App">
-    <MyContext.Provider value={{theme, setTheme, open, setOpen}}>
+    <MyContext.Provider value={{theme, setTheme, open, setOpen, times, setTimes}}>
       <ThemeProvider theme={theme}>
         <Header />
         <Menu />

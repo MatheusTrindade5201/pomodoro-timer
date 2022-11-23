@@ -1,7 +1,8 @@
 import { InputOptionsLabel } from "./style"
 
 interface Input {
-    title: string
+    title: string,
+    value: number
 }
 
 const Option = (props: Input) => {
@@ -9,7 +10,7 @@ const Option = (props: Input) => {
     return(
         <InputOptionsLabel>
         <h3>{props.title}:</h3>
-        <input type={"number"}></input>
+        <input value={props.value} type={"number"}></input>
         </InputOptionsLabel>
     )
 }
