@@ -2,6 +2,7 @@ import { useState } from "react"
 import { DefaultTheme, ThemeProvider } from "styled-components"
 import Header from "./components/Header"
 import Menu from "./components/Menu"
+import Timer from "./components/Timer"
 import { MyContext } from "./context/myContext"
 import GlobalStyle from "./styles/global"
 import dark from "./styles/themes/dark"
@@ -20,6 +21,9 @@ function App() {
       <ThemeProvider theme={theme}>
         <Header />
         <Menu />
+        <div className="timer__section">
+          <Timer minutes={25} seconds={0} />
+        </div>
         <GlobalStyle />
       </ThemeProvider>
     </MyContext.Provider>
