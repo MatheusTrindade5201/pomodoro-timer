@@ -11,6 +11,14 @@ const GlobalStyle = createGlobalStyle`
         overflow: hidden;
     }
 
+    .timer__section{
+        height: calc(100vh - 61px - .5rem);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center
+    }
+
 `
 
 export default GlobalStyle
