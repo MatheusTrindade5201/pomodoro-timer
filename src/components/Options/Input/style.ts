@@ -15,7 +15,7 @@ export const InputOptionsLabel = styled.label`
         padding: .2rem .5rem;
         text-align: center;
         font-size: 2rem;
-        width: 50%;
+        width: 80%;
         align-self: center
     }
 `

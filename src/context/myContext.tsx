@@ -6,8 +6,8 @@ export type GlobalContent = {
     setTheme: (c:DefaultTheme) => void,
     open: boolean,
     setOpen: (c:boolean) => void,
-    times: Array<number>,
-    setTimes: (c:Array<number>) => void,
+    times: Array<string>,
+    setTimes: (c:Array<string>) => void,
 }
 
 export const MyContext = createContext<GlobalContent>({
@@ -15,7 +15,7 @@ export const MyContext = createContext<GlobalContent>({
     setTheme: () => {},
     open: false,
     setOpen: () => {},
-    times: [25, 5, 10],
+    times: ['00:25:00', '00:05:00', '00:15:00'],
     setTimes: () => {}
 });
 

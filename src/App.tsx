@@ -13,7 +13,7 @@ function App() {
 
   const [theme , setTheme] = useState<DefaultTheme>(light)
   const [open, setOpen] = useState<boolean>(false)
-  const [times, setTimes] = useState<Array<number>>([25,5,10])
+  const [times, setTimes] = useState<Array<string>>(['00:25:00', '00:05:00', '00:15:00'])
 
   return (
     <div className="App">
