@@ -22,7 +22,7 @@ function App() {
         <Header />
         <Menu />
         <div className="timer__section">
-          <Timer minutes={25} seconds={0} />
+          <Timer time={times[0]} />
         </div>
         <GlobalStyle />
       </ThemeProvider>
