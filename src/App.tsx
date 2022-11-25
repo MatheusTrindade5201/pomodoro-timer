@@ -13,16 +13,18 @@ function App() {
 
   const [theme , setTheme] = useState<DefaultTheme>(light)
   const [open, setOpen] = useState<boolean>(false)
-  const [times, setTimes] = useState<Array<string>>(['00:25:00', '00:05:00', '00:15:00'])
+  const [timer, setTimer] = useState<string>('00:25:00')
+  const [short, setShort] = useState<string>('00:05:00')
+  const [long, setLong] = useState<string>('00:15:00')
 
   return (
     <div className="App">
-    <MyContext.Provider value={{theme, setTheme, open, setOpen, times, setTimes}}>
+    <MyContext.Provider value={{theme, setTheme, open, setOpen, timer, setTimer, short, setShort, long, setLong}}>
       <ThemeProvider theme={theme}>
         <Header />
         <Menu />
         <div className="timer__section">
-          <Timer time={times[0]} />
+          <Timer time={timer} />
         </div>
         <GlobalStyle />
       </ThemeProvider>

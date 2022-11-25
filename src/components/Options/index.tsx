@@ -5,13 +5,12 @@ import { OptionsWrapper } from "./style"
 
 const TimerOptions = () => {
     
-    const {times} = useContext(MyContext)
-    console.log(times)
+    const {timer, short, long, setTimer, setShort, setLong} = useContext(MyContext)
     return(
         <OptionsWrapper>
-            <Option value={times[0]} title={'Timer'} />
-            <Option value={times[1]} title={'Short Pause'} />
-            <Option value={times[2]} title={'Long Pause'} />
+            <Option timerValue={timer} Change={value => setTimer(value)} title={'Timer'} />
+            <Option timerValue={short} Change={value => setShort(value)} title={'Short Pause'} />
+            <Option timerValue={long} Change={value => setLong(value)} title={'Long Pause'} />
         </OptionsWrapper>
     )
 }
