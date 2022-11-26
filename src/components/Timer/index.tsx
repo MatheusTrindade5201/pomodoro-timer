@@ -1,7 +1,7 @@
 import { TimerContainer } from "./style"
 
 export interface timerValues{
-    time: string,
+    time: number,
 }
 
 const Timer = (props:timerValues) => {

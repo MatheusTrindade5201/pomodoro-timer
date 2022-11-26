@@ -13,12 +13,12 @@ function App() {
 
   const [theme , setTheme] = useState<DefaultTheme>(light)
   const [open, setOpen] = useState<boolean>(false)
-  const [timer, setTimer] = useState<string>('00:25:00')
-  const [short, setShort] = useState<string>('00:05:00')
-  const [long, setLong] = useState<string>('00:15:00')
-  const [OptionTimer, setOptionTimer] = useState<string>('00:25:00')
-  const [OptionShort, setOptionShort] = useState<string>('00:05:00')
-  const [OptionLong, setOptionLong] = useState<string>('00:15:00')
+  const [timer, setTimer] = useState<number>(25)
+  const [short, setShort] = useState<number>(5)
+  const [long, setLong] = useState<number>(15)
+  const [OptionTimer, setOptionTimer] = useState<number>(25)
+  const [OptionShort, setOptionShort] = useState<number>(5)
+  const [OptionLong, setOptionLong] = useState<number>(15)
 
   return (
     <div className="App">
