@@ -6,11 +6,14 @@ export type GlobalContent = {
     setTheme: (c:DefaultTheme) => void,
     open: boolean,
     setOpen: (c:boolean) => void,
-    timer: string,
+    OptionTimer: string,
+    setOptionTimer: (c:string) => void,
+    OptionShort: string,
+    setOptionShort: (c:string) => void,
+    OptionLong: string,
+    setOptionLong: (c:string) => void,
     setTimer: (c:string) => void,
-    short: string,
     setShort: (c:string) => void,
-    long: string,
     setLong: (c:string) => void,
 }
 
@@ -19,11 +22,13 @@ export const MyContext = createContext<GlobalContent>({
     setTheme: () => {},
     open: false,
     setOpen: () => {},
-    timer: '00:25:00',
+    OptionTimer: '00:25:00',
+    setOptionTimer: () => {},
+    OptionShort: '00:05:00',
+    setOptionShort: () => {},
+    OptionLong: '00:15:00',
+    setOptionLong: () => {},
     setTimer: () => {},
-    short: '00:05:00',
     setShort: () => {},
-    long: '00:15:00',
-    setLong: () => {}
+    setLong: () => {},
 });
-

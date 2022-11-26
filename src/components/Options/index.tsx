@@ -1,16 +1,22 @@
 import { useContext } from "react"
 import { MyContext } from "../../context/myContext"
 import Option from "./Input"
-import { OptionsWrapper } from "./style"
+import { ButtonOptions, OptionsWrapper } from "./style"
 
 const TimerOptions = () => {
     
-    const {timer, short, long, setTimer, setShort, setLong} = useContext(MyContext)
+    const {OptionTimer, setOptionTimer, OptionShort, setOptionShort, OptionLong, setOptionLong, setLong, setShort, setTimer} = useContext(MyContext)
     return(
         <OptionsWrapper>
-            <Option timerValue={timer} Change={value => setTimer(value)} title={'Timer'} />
-            <Option timerValue={short} Change={value => setShort(value)} title={'Short Pause'} />
-            <Option timerValue={long} Change={value => setLong(value)} title={'Long Pause'} />
+            <Option timerValue={OptionTimer} Change={value => setOptionTimer(value)} title={'Timer'} />
+            <Option timerValue={OptionShort} Change={value => setOptionShort(value)} title={'Short Pause'} />
+            <Option timerValue={OptionLong} Change={value => setOptionLong(value)} title={'Long Pause'} />
+            <ButtonOptions
+            onClick={() => {
+                setTimer(OptionTimer);
+                setShort(OptionShort);
+                setLong(OptionLong);
+            }}>Save</ButtonOptions>
         </OptionsWrapper>
     )
 }
