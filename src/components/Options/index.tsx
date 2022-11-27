@@ -13,9 +13,9 @@ const TimerOptions = () => {
             <Option timerValue={OptionLong} Change={value => setOptionLong(value)} title={'Long Pause'} />
             <ButtonOptions
             onClick={() => {
-                setTimer(OptionTimer);
-                setShort(OptionShort);
-                setLong(OptionLong);
+                setTimer(OptionTimer*60);
+                setShort(OptionShort*60);
+                setLong(OptionLong*60);
             }}>Save</ButtonOptions>
         </OptionsWrapper>
     )

@@ -1,3 +1,5 @@
+import { useContext, useEffect, useState } from "react";
+import { MyContext } from "../../context/myContext";
 import { TimerContainer } from "./style"
 
 export interface timerValues{
@@ -6,13 +8,26 @@ export interface timerValues{
 
 const Timer = (props:timerValues) => {
 
-    const timer = props.time*60;
-    const minute = Math.floor(timer/60);
-    const seconds = timer % 60;
+    const {long, short, timer, setTimer, setLong, setShort} = useContext(MyContext)
+    const [time, setTime] = useState(timer)
+
+    useEffect(() => {
+       setTime(timer) 
+    }, [timer])
+
+    const minute = Math.floor(time/60);
+    const seconds = time % 60;
     const [minuteSetOfTen, minuteUnity] = String(minute).padStart(2,'0');
     const [secondsSetOfTen, secondsUnity] = String(seconds).padStart(2,'0');
 
-    
+    function regressive(counter: number = 0){
+        setTimeout(() => {
+            if(counter > 0){
+                setTime(counter-1);
+                return regressive(counter -1)
+            }
+        }, 1000);
+    }
     
     return (
         <TimerContainer>

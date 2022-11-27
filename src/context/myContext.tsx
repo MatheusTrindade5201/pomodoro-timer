@@ -15,6 +15,9 @@ export type GlobalContent = {
     setTimer: (c:number) => void,
     setShort: (c:number) => void,
     setLong: (c:number) => void,
+    long:number ,
+    short:number ,
+    timer: number
 }
 
 export const MyContext = createContext<GlobalContent>({
@@ -31,4 +34,7 @@ export const MyContext = createContext<GlobalContent>({
     setTimer: () => {},
     setShort: () => {},
     setLong: () => {},
+    timer: 25,
+    long: 15,
+    short:5 ,
 });
