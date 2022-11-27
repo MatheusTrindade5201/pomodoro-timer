@@ -6,6 +6,7 @@ justify-content: space-between;
 padding: .5rem 2vw;
 align-items: center;
 gap: 5rem;
+overflow: hidden;
 `
 
 export const Logo = styled.h1`
