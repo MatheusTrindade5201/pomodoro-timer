@@ -5,7 +5,7 @@ import { ButtonOptions, OptionsWrapper } from "./style"
 
 const TimerOptions = () => {
     
-    const {OptionTimer, setOptionTimer, OptionShort, setOptionShort, OptionLong, setOptionLong, setLong, setShort, setTimer} = useContext(MyContext)
+    const {OptionTimer, setOptionTimer, OptionShort, setOptionShort, OptionLong, setOptionLong, setLong, setShort, setTimer, started, setStarted} = useContext(MyContext)
     return(
         <OptionsWrapper>
             <Option timerValue={OptionTimer} Change={value => setOptionTimer(value)} title={'Timer'} />
@@ -13,9 +13,13 @@ const TimerOptions = () => {
             <Option timerValue={OptionLong} Change={value => setOptionLong(value)} title={'Long Pause'} />
             <ButtonOptions
             onClick={() => {
-                setTimer(OptionTimer*60);
-                setShort(OptionShort*60);
-                setLong(OptionLong*60);
+                setStarted(false);
+                setTimeout(() => {
+                    setTimer(OptionTimer*60);
+                    setShort(OptionShort*60);
+                    setLong(OptionLong*60);
+                },1000)
+                
             }}>Save</ButtonOptions>
         </OptionsWrapper>
     )
