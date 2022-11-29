@@ -19,10 +19,11 @@ function App() {
   const [OptionTimer, setOptionTimer] = useState<number>(25)
   const [OptionShort, setOptionShort] = useState<number>(5)
   const [OptionLong, setOptionLong] = useState<number>(15)
+  const [started, setStarted] = useState(false)
 
   return (
     <div className="App">
-    <MyContext.Provider value={{theme, setTheme, open, setOpen, OptionTimer, setOptionTimer, OptionShort, setOptionShort, OptionLong, setOptionLong, setTimer, setShort, setLong, timer, short, long}}>
+    <MyContext.Provider value={{theme, setTheme, open, setOpen, OptionTimer, setOptionTimer, OptionShort, setOptionShort, OptionLong, setOptionLong, setTimer, setShort, setLong, timer, short, long, started, setStarted}}>
       <ThemeProvider theme={theme}>
         <Header />
         <Menu />

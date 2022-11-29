@@ -10,9 +10,8 @@ export interface timerValues{
 
 const Timer = (props:timerValues) => {
 
-    const {long, short, timer, setTimer, setLong, setShort} = useContext(MyContext)
+    const {long, short, timer, setTimer, setLong, setShort, started, setStarted} = useContext(MyContext)
     const [time, setTime] = useState(timer)
-    const [started, setStarted] = useState(false)
 
     useEffect(() => {
        setTime(timer) 

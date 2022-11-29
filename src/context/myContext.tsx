@@ -17,7 +17,9 @@ export type GlobalContent = {
     setLong: (c:number) => void,
     long:number ,
     short:number ,
-    timer: number
+    timer: number,
+    started: boolean,
+    setStarted: (c:boolean) => void
 }
 
 export const MyContext = createContext<GlobalContent>({
@@ -37,4 +39,6 @@ export const MyContext = createContext<GlobalContent>({
     timer: 25,
     long: 15,
     short:5 ,
+    started: false,
+    setStarted: () => {}
 });
