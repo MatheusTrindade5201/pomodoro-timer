@@ -1,5 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { MyContext } from "../../context/myContext";
+import Button from "./button";
+
 import { TimerContainer } from "./style"
 
 export interface timerValues{
@@ -10,6 +12,7 @@ const Timer = (props:timerValues) => {
 
     const {long, short, timer, setTimer, setLong, setShort} = useContext(MyContext)
     const [time, setTime] = useState(timer)
+    const [started, setStarted] = useState(false)
 
     useEffect(() => {
        setTime(timer) 
@@ -24,19 +27,31 @@ const Timer = (props:timerValues) => {
         setTimeout(() => {
             if(counter > 0){
                 setTime(counter-1);
-                return regressive(counter -1)
             }
         }, 1000);
     }
     
+    if(started === true) {
+        regressive(time)
+    }
+    
     return (
-        <TimerContainer>
-            <span>{minuteSetOfTen}</span>
-            <span>{minuteUnity}</span>
-            <span>:</span>
-            <span>{secondsSetOfTen}</span>
-            <span>{secondsUnity}</span>
-        </TimerContainer>
+        <div>
+            <TimerContainer>
+                <span>{minuteSetOfTen}</span>
+                <span>{minuteUnity}</span>
+                <span>:</span>
+                <span>{secondsSetOfTen}</span>
+                <span>{secondsUnity}</span>
+            </TimerContainer>
+            <Button text={started === true ? 'Stop' : 'Start'}
+            Function={() => setStarted(started === true ? false : true)}/>
+            <Button text={'Reset'}
+            Function={() => setTimeout(()=>{
+                setTime(timer)
+            }, 500)}
+            disabled={started}/>
+        </div>
     )
 }
 
