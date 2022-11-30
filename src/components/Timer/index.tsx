@@ -11,11 +11,21 @@ export interface timerValues{
 const Timer = (props:timerValues) => {
 
     const {long, short, timer, setTimer, setLong, setShort, started, setStarted} = useContext(MyContext)
-    const [time, setTime] = useState(timer)
+    const [time, setTime] = useState<number>(timer);
+    const [round, setRound] = useState<number>(0)
 
     useEffect(() => {
-       setTime(timer) 
-    }, [timer])
+        if(round % 2 === 0){
+            setTime(timer) 
+        }
+        if(round % 2 !== 0){
+            if(round === 5){
+                setTime(long)
+            }else{
+                setTime(short)
+            }
+        }
+    }, [timer, short, long, round])
 
     const minute = Math.floor(time/60);
     const seconds = time % 60;
@@ -26,6 +36,10 @@ const Timer = (props:timerValues) => {
         setTimeout(() => {
             if(counter > 0){
                 setTime(counter-1);
+            }else{
+                setRound(round => round + 0.5 )
+                console.log(round);
+                setTime(timer)
             }
         }, 1000);
     }
@@ -47,7 +61,8 @@ const Timer = (props:timerValues) => {
             Function={() => setStarted(started === true ? false : true)}/>
             <Button text={'Reset'}
             Function={() => setTimeout(()=>{
-                setTime(timer)
+                setTime(timer);
+                setRound(0)
             }, 500)}
             disabled={started}/>
         </div>
