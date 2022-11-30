@@ -15,6 +15,10 @@ const Timer = (props:timerValues) => {
     const [round, setRound] = useState<number>(0)
 
     useEffect(() => {
+        if(round > 5){
+            setRound(0)
+            setTime(timer)
+        }
         if(round % 2 === 0){
             setTime(timer) 
         }
@@ -38,7 +42,6 @@ const Timer = (props:timerValues) => {
                 setTime(counter-1);
             }else{
                 setRound(round => round + 0.5 )
-                console.log(round);
                 setTime(timer)
             }
         }, 1000);
