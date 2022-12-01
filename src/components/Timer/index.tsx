@@ -61,6 +61,7 @@ const Timer = (props:timerValues) => {
                 <span>{secondsSetOfTen}</span>
                 <span>{secondsUnity}</span>
             </TimerContainer>
+            <RoundDots round={round} />
             <Button text={started === true ? 'Stop' : 'Start'}
             Function={() => setStarted(started === true ? false : true)}/>
             <Button text={'Reset'}
