@@ -8,5 +8,4 @@ export const TimerContainer = styled.div`
     border-style: double;
     border-radius: 8px;
     background-color: whitesmoke;
-    opacity: .9
 `
