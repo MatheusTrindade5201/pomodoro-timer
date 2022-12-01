@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { MyContext } from "../../context/myContext";
+import RoundDots from "../RoundDots";
 import Button from "./button";
 
 import { TimerContainer } from "./style"
@@ -15,7 +16,7 @@ const Timer = (props:timerValues) => {
     const [round, setRound] = useState<number>(0)
 
     useEffect(() => {
-        if(round > 5){
+        if(round > 7){
             setRound(0)
             setTime(timer)
         }
@@ -23,7 +24,7 @@ const Timer = (props:timerValues) => {
             setTime(timer) 
         }
         if(round % 2 !== 0){
-            if(round === 5){
+            if(round === 7){
                 setTime(long)
             }else{
                 setTime(short)
