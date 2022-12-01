@@ -6,5 +6,7 @@ export const TimerContainer = styled.div`
     padding: .5rem;
     border: 8px ${porps => porps.theme.settings.secondary};
     border-style: double;
-    border-radius: 8px
+    border-radius: 8px;
+    background-color: whitesmoke;
+    opacity: .9
 `
