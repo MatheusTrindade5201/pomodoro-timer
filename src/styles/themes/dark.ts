@@ -2,8 +2,8 @@ export default {
     title: 'dark',
     settings:{
         primary: '#020D21',
-        secondary: '#07223A',
+        secondary: '#0b365b',
         primary_text: '#FDFEFE',
-        secondary_text: '#4E8193',
+        secondary_text: '#EEF6F6',
     }
 }
